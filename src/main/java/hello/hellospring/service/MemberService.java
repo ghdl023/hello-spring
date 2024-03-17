@@ -3,6 +3,7 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 //@Service // Spring Bean으로 직접 등록함
+@Transactional // Jpa사용시 서비스에 @Transactional 애노테이션 추가
 public class MemberService {
 
     private final MemberRepository memberRepository;
